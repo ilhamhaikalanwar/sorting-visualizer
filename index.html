@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Algoritma Sorting Interaktif</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #0056b3;
+            text-align: center;
+        }
+        .controls {
+            margin-bottom: 25px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #e9f5ff;
+        }
+        .control-group {
+            margin-bottom: 15px;
+        }
+        .control-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        select, button {
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: 1px solid #007bff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        textarea {
+            width: 98%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            font-family: monospace;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .output-section {
+            margin-top: 30px;
+            border-top: 2px solid #007bff;
+            padding-top: 20px;
+        }
+        h2 {
+            color: #007bff;
+            margin-top: 0;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ddd;
+        }
+        .step {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-left: 4px solid #28a745;
+            background-color: #f0fff4;
+            border-radius: 4px;
+        }
+        .array {
+            font-family: monospace;
+            font-size: 1.1em;
+            background-color: #fff;
+            padding: 5px;
+            border: 1px dashed #ccc;
+            border-radius: 3px;
+            display: block;
+            margin-top: 5px;
+        }
+        /* Styling untuk highlight elemen */
+        .highlight-min {
+            color: white;
+            background-color: #dc3545;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .highlight-pivot {
+            color: white;
+            background-color: #ffc107;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .highlight-swap {
+            color: white;
+            background-color: #17a2b8;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tugas Ilham Haikal Anwar</h1>
+        <h1>Simulasi Algoritma Pengurutan Interaktif</h1>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="input-data">Masukkan Angka (dipisahkan koma, contoh: 82, 75, 60, 95):</label>
+                <textarea id="input-data" rows="2">82, 75, 60, 95, 70, 88</textarea>
+            </div>
+            
+            <div class="control-group" style="display: flex; gap: 20px; align-items: flex-end;">
+                <div>
+                    <label for="sort-type-select">Pilih Algoritma:</label>
+                    <select id="sort-type-select">
+                        <option value="selection">Selection Sort (Ascending)</option>
+                        <option value="quick-asc">Quick Sort (Ascending)</option>
+                        <option value="quick-desc">Quick Sort (Descending)</option>
+                    </select>
+                </div>
+                <button onclick="runSimulation()">Tampilkan Proses Sorting</button>
+            </div>
+        </div>
+
+        <div id="output-section" class="output-section">
+            <p>Masukkan data dan pilih algoritma untuk melihat simulasinya.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
